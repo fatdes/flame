@@ -4,6 +4,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../anchor.dart';
+import '../collision_detection.dart' as collision_detection;
 import '../extensions/offset.dart';
 import '../extensions/vector2.dart';
 import 'base_component.dart';
@@ -80,25 +81,15 @@ abstract class PositionComponent extends BaseComponent {
   }
 
   @override
-  bool checkOverlap(Vector2 point) {
-    final corners = _rotatedCorners();
-    corners.add(corners.first);
-    for (int i = 1; i < corners.length; i++) {
-      final previousCorner = corners[i - 1];
-      final corner = corners[i];
-      final isOutside =
-          (corner.x - previousCorner.x) * (point.y - previousCorner.y) -
-                  (point.x - previousCorner.x) * (corner.y - previousCorner.y) >
-              0;
-      if (isOutside) {
-        // Point is outside of convex polygon (only used for rectangles so far)
-        return false;
-      }
-    }
-    return true;
+  bool containsPoint(Vector2 point) {
+    return collision_detection.containsPoint(point, boundingBox());
   }
 
-  List<Vector2> _rotatedCorners() {
+  /// Gives back the bounding box represented as a list of points which are the
+  /// corners of the box rotated with [angle], if overridden it can return
+  /// more than four "corners" for more accurate collision detection and overlap
+  /// detection, but the points has to form a convex polygon.
+  List<Vector2> boundingBox() {
     // Rotates the corner around [position]
     Vector2 rotateCorner(Vector2 corner) {
       return Vector2(
@@ -118,6 +109,14 @@ abstract class PositionComponent extends BaseComponent {
       rotateCorner(topLeftPosition + size), // Bottom-right
       rotateCorner(topLeftPosition + Vector2(size.x, 0.0)), // Top-right
     ];
+  }
+
+
+  
+  List<Vector2> collisionPoints(PositionComponent other) {
+
+
+    return [];
   }
 
   double angleTo(PositionComponent c) => position.angleTo(c.position);
