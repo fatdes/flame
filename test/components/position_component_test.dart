@@ -17,7 +17,7 @@ void main() {
       component.anchor = Anchor.center;
 
       final point = Vector2(2.0, 2.0);
-      expect(component.checkOverlap(point), true);
+      expect(component.containsPoint(point), true);
     });
 
     test('overlap on edge', () {
@@ -28,7 +28,7 @@ void main() {
       component.anchor = Anchor.center;
 
       final point = Vector2(1.0, 1.0);
-      expect(component.checkOverlap(point), true);
+      expect(component.containsPoint(point), true);
     });
 
     test('not overlapping with x', () {
@@ -39,7 +39,7 @@ void main() {
       component.anchor = Anchor.center;
 
       final point = Vector2(4.0, 1.0);
-      expect(component.checkOverlap(point), false);
+      expect(component.containsPoint(point), false);
     });
 
     test('not overlapping with y', () {
@@ -50,7 +50,7 @@ void main() {
       component.anchor = Anchor.center;
 
       final point = Vector2(1.0, 4.0);
-      expect(component.checkOverlap(point), false);
+      expect(component.containsPoint(point), false);
     });
 
     test('overlapping with angle', () {
@@ -61,7 +61,7 @@ void main() {
       component.anchor = Anchor.center;
 
       final point = Vector2(3.1, 2.0);
-      expect(component.checkOverlap(point), true);
+      expect(component.containsPoint(point), true);
     });
 
     test('not overlapping with angle', () {
@@ -72,7 +72,7 @@ void main() {
       component.anchor = Anchor.center;
 
       final point = Vector2(1.0, 0.1);
-      expect(component.checkOverlap(point), false);
+      expect(component.containsPoint(point), false);
     });
 
     test('overlapping with angle and topLeft anchor', () {
@@ -83,7 +83,7 @@ void main() {
       component.anchor = Anchor.topLeft;
 
       final point = Vector2(1.0, 3.1);
-      expect(component.checkOverlap(point), true);
+      expect(component.containsPoint(point), true);
     });
   });
 }
