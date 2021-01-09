@@ -20,6 +20,7 @@
  - Updated the `widgets.md` documentation
  - Removing methods `initialDimensions` and `removeGestureRecognizer` to avoid confusion
  - Adding standard for `SpriteComponent` and `SpriteAnimationComponent` constructors
+ - Add hull capabilities for PositionComponent to make more accurate gestures
 
 ## 1.0.0-rc5
  - Option for overlays to be already visible on the GameWidget
