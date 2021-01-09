@@ -20,7 +20,6 @@
  - Updated the `widgets.md` documentation
  - Removing methods `initialDimensions` and `removeGestureRecognizer` to avoid confusion
  - Adding standard for `SpriteComponent` and `SpriteAnimationComponent` constructors
- - Add hull capabilities for PositionComponent to make more accurate gestures
  - Add hitbox mixin for PositionComponent to make more accurate gestures
 
 ## 1.0.0-rc5
