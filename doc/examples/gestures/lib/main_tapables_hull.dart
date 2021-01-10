@@ -31,7 +31,7 @@ class TapablePolygon extends PositionComponent with Tapable {
       Vector2(0, -0.5),
       Vector2(-0.4, -0.4),
     ];
-    this.position = position ?? Vector2.all(100);
+    this.position = position ?? Vector2.all(150);
   }
 
   @override
@@ -42,6 +42,7 @@ class TapablePolygon extends PositionComponent with Tapable {
   @override
   bool onTapDown(TapDownDetails details) {
     angle += 1.0;
+    size.add(Vector2.all(10));
     return true;
   }
 
