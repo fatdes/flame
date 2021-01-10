@@ -47,7 +47,7 @@ class MyComponent extends PositionComponent with Tapable, HasGameRef {
   }
 
   @override
-  bool checkOverlap(Vector2 v) => true;
+  bool containsPoint(Vector2 v) => true;
 
   @override
   void onRemove() {

@@ -44,7 +44,7 @@ class MyTap extends PositionComponent with Tapable {
   }
 
   @override
-  bool checkOverlap(Vector2 v) => true;
+  bool containsPoint(Vector2 v) => true;
 }
 
 class MyAsyncChild extends MyTap {
