@@ -20,6 +20,7 @@ void main() {
 class TapablePolygon extends PositionComponent with Tapable {
   TapablePolygon({Vector2 position}) {
     size = Vector2.all(100);
+    // The hull is defined as percentages of the full size of the component
     hull = [
       Vector2(-0.5, 0),
       Vector2(-0.4, 0.3),
