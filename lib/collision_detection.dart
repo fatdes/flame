@@ -1,7 +1,6 @@
 import 'dart:math' as math;
 
-import 'package:flame/components/position_component.dart';
-
+import 'components/position_component.dart';
 import 'extensions/vector2.dart';
 
 class Hull {
