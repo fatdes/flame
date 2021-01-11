@@ -3,6 +3,7 @@ import 'package:flame/extensions/vector2.dart';
 import 'package:flutter/material.dart';
 import 'package:flame/game.dart';
 import 'package:flame/components/position_component.dart';
+import 'package:flame/components/mixins/has_hitbox.dart';
 import 'package:flame/components/mixins/tapable.dart';
 
 void main() {
@@ -17,11 +18,11 @@ void main() {
   );
 }
 
-class TapablePolygon extends PositionComponent with Tapable {
+class TapablePolygon extends PositionComponent with Tapable, HasHitbox {
   TapablePolygon({Vector2 position}) {
     size = Vector2.all(100);
     // The hull is defined as percentages of the full size of the component
-    hull = [
+    hitbox = [
       Vector2(-0.5, 0),
       Vector2(-0.4, 0.3),
       Vector2(0, 0.5),
