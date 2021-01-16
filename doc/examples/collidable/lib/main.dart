@@ -1,6 +1,7 @@
 import 'package:flame/components/mixins/collidable.dart';
 import 'package:flame/components/mixins/hitbox.dart';
 import 'package:flame/game.dart';
+import 'package:flame/game/mixins/has_collidables.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/extensions/vector2.dart';
 import 'package:flame/components/sprite_component.dart';
@@ -44,21 +45,21 @@ class CollidableRock extends SpriteComponent with Hitbox, Collidable {
       return;
     }
 
-    x += xDirection * SPEED * dt;
+    //x += xDirection * SPEED * dt;
 
-    final rect = toRect();
+    //final rect = toRect();
 
-    if ((x <= 0 && xDirection == -1) ||
-        (rect.right >= _gameSize.x && xDirection == 1)) {
-      xDirection = xDirection * -1;
-    }
+    //if ((x <= 0 && xDirection == -1) ||
+    //    (rect.right >= _gameSize.x && xDirection == 1)) {
+    //  xDirection = xDirection * -1;
+    //}
 
-    y += yDirection * SPEED * dt;
+    //y += yDirection * SPEED * dt;
 
-    if ((y <= 0 && yDirection == -1) ||
-        (rect.bottom >= _gameSize.y && yDirection == 1)) {
-      yDirection = yDirection * -1;
-    }
+    //if ((y <= 0 && yDirection == -1) ||
+    //    (rect.bottom >= _gameSize.y && yDirection == 1)) {
+    //  yDirection = yDirection * -1;
+    //}
   }
 
   @override
@@ -73,7 +74,7 @@ class CollidableRock extends SpriteComponent with Hitbox, Collidable {
   }
 }
 
-class MyGame extends BaseGame {
+class MyGame extends BaseGame with HasCollidables {
   final fpsTextConfig = TextConfig(color: const Color(0xFFFFFFFF));
 
   @override
@@ -84,12 +85,12 @@ class MyGame extends BaseGame {
     final androidImage = await images.load('android.png');
 
     final android = CollidableRock(androidImage);
-    android.x = 100;
-    android.y = 400;
+    android.x = 160;
+    android.y = 190;
 
     final android2 = CollidableRock(androidImage);
-    android2.x = 100;
-    android2.y = 400;
+    android2.x = 200;
+    android2.y = 200;
     android2.yDirection = -1;
 
     final android3 = CollidableRock(androidImage);
@@ -99,7 +100,7 @@ class MyGame extends BaseGame {
 
     add(android);
     add(android2);
-    add(android3);
+    //add(android3);
   }
 
   @override
