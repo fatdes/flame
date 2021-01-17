@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:flame/game/mixins/has_collidables.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart' hide WidgetBuilder;
@@ -15,6 +14,7 @@ import '../components/mixins/tapable.dart';
 import '../components/position_component.dart';
 import '../extensions/vector2.dart';
 import '../fps_counter.dart';
+import 'mixins/has_collidables.dart';
 import 'game.dart';
 
 /// This is a more complete and opinionated implementation of Game.
