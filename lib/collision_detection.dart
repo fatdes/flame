@@ -1,5 +1,3 @@
-import 'dart:math' as math;
-
 import 'extensions/vector2.dart';
 
 /// Checks whether the [polygon] represented by the list of [Vector2] contains

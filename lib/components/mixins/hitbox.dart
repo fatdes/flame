@@ -1,7 +1,5 @@
 import 'dart:ui';
 
-import 'package:flame/extensions/canvas.dart';
-
 import '../position_component.dart';
 import '../../collision_detection.dart' as collision_detection;
 import '../../extensions/vector2.dart';
