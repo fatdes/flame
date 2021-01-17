@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '../anchor.dart';
 import '../extensions/offset.dart';
 import '../extensions/vector2.dart';
-import '../collision_detection.dart' as collision_detection;
+import '../collision_detection/collision_detection.dart' as collision_detection;
 import 'base_component.dart';
 import 'component.dart';
 import 'mixins/hitbox.dart';
