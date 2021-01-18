@@ -4,6 +4,7 @@ import 'package:flame/anchor.dart';
 import 'package:flame/components/mixins/hitbox.dart';
 import 'package:flame/components/position_component.dart';
 import 'package:flame/extensions/vector2.dart';
+import 'package:flame/geometry/polygon.dart';
 import 'package:test/test.dart';
 
 class MyComponent extends PositionComponent {}
@@ -95,12 +96,12 @@ void main() {
       component.position = Vector2(1.0, 1.0);
       component.anchor = Anchor.topLeft;
       component.size = size;
-      component.shape = [
+      component.addShape(HitboxPolygon([
         Vector2(1, 0),
         Vector2(0, -1),
         Vector2(-1, 0),
         Vector2(0, 1),
-      ];
+      ]));
 
       final point = component.position + component.size / 4;
       expect(component.containsPoint(point), true);
@@ -112,12 +113,12 @@ void main() {
       component.position = Vector2(1.0, 1.0);
       component.anchor = Anchor.topLeft;
       component.size = size;
-      component.shape = [
+      component.addShape(HitboxPolygon([
         Vector2(1, 0),
         Vector2(0, -1),
         Vector2(-1, 0),
         Vector2(0, 1),
-      ];
+      ]));
 
       final point = Vector2(1.1, 1.1);
       expect(component.containsPoint(point), false);
