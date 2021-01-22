@@ -124,8 +124,9 @@ abstract class PositionComponent extends BaseComponent {
     this.anchor = Anchor.topLeft,
     this.renderFlipX = false,
     this.renderFlipY = false,
+    int? priority,
   })  : position = position ?? Vector2.zero(),
-        size = size ?? Vector2.zero();
+        size = size ?? Vector2.zero(), super(priority: priority);
 
   @override
   bool containsPoint(Vector2 point) {

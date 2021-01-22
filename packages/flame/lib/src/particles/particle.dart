@@ -176,7 +176,7 @@ abstract class Particle {
 
   /// Wraps this particle with [ParticleComponent]
   /// to be used within the BaseGame component system.
-  Component asComponent() {
-    return ParticleComponent(particle: this);
+  Component asComponent([int priority = 0]) {
+    return ParticleComponent(particle: this, priority: priority);
   }
 }

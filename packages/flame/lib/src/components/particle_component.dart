@@ -12,7 +12,8 @@ class ParticleComponent extends Component {
 
   ParticleComponent({
     required this.particle,
-  });
+    int? priority,
+  }) : super(priority: priority ?? 0);
 
   /// This [ParticleComponent] will be removed by the BaseGame.
   @override

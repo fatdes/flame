@@ -52,6 +52,8 @@ abstract class BaseComponent extends Component {
 
   TextConfig get debugTextConfig => TextConfig(color: debugColor, fontSize: 12);
 
+  BaseComponent({int? priority}) : super(priority: priority ?? 0);
+
   /// This method is called periodically by the game engine to request that your component updates itself.
   ///
   /// The time [dt] in seconds (with microseconds precision provided by Flutter) since the last update cycle.
@@ -188,7 +190,7 @@ abstract class BaseComponent extends Component {
   ) {
     var shouldContinue = true;
     for (final child in _children) {
-      if (child is BaseComponent) {
+      if (child is T && child is BaseComponent) {
         shouldContinue = child.propagateToChildren(handler);
       }
       if (shouldContinue && child is T) {
