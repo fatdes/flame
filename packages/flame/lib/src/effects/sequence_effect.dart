@@ -81,6 +81,7 @@ class SequenceEffect extends PositionComponentEffect {
     _driftModifier = 0.0;
     if (currentEffect.hasCompleted()) {
       currentEffect.setComponentToEndState();
+      currentEffect.onComplete?.call();
       _driftModifier = currentEffect.driftTime;
       _currentIndex++;
       final orderedEffects =
